@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integrated Project Controls Risk Framework — Prototype Alpha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="titleblock">
+      <div class="left">
+        <h1>Integrated Project Controls Risk Framework</h1>
+        <p>Prototype Alpha — Portfolio Risk Dashboard · Synthetic data only</p>
+      </div>
+      <div class="right">
+        <div class="tb-cell">
+          <div class="k">Version</div>
+          <div class="v">0.1</div>
+        </div>
+        <div class="tb-cell">
+          <div class="k">Reporting Period</div>
+          <div class="v">2026-08</div>
+        </div>
+        <div class="tb-cell">
+          <div class="k">Projects</div>
+          <div class="v" id="tb-count">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app">
+      <div class="rail">
+        <div class="rail-head">
+          <h2>Portfolio Ranking</h2>
+          <div class="sub">Ranked by composite Project Delivery Risk Score</div>
+        </div>
+        <div id="portfolio-list"></div>
+      </div>
+
+      <div class="main">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Project Detail</h3>
+            <button class="reset-btn" id="reset-btn">
+              Reset to synthetic baseline
+            </button>
+          </div>
+          <div class="panel-body">
+            <div class="hero">
+              <div class="hero-id">
+                <div class="arche" id="p-arche"></div>
+                <h2 id="p-name"></h2>
+                <div class="pidline" id="p-id"></div>
+              </div>
+              <div class="hero-score">
+                <div>
+                  <div class="score-num" id="p-score">—</div>
+                  <div class="score-sub">
+                    Composite Delivery Risk Score (0-100)
+                  </div>
+                </div>
+                <div class="score-badge" id="p-badge">—</div>
+              </div>
+            </div>
+            <div class="driver-callout" id="p-driver"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Domain Scores</h3></div>
+          <div class="panel-body">
+            <div class="domain-grid" id="domain-grid"></div>
+            <div style="margin-top: 14px" class="legend">
+              <span><i style="background: var(--low)"></i>Low 0-24</span>
+              <span
+                ><i style="background: var(--moderate)"></i>Moderate 25-49</span
+              >
+              <span
+                ><i style="background: var(--elevated)"></i>Elevated 50-74</span
+              >
+              <span
+                ><i style="background: var(--critical)"></i>Critical
+                75-100</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Raw Field Inputs — editable</h3></div>
+          <div class="panel-body" id="inputs-body"></div>
+          <div class="foot-note">
+            Change any value and every score above recalculates immediately.
+            This is what Validation Test "Calculation reproducibility" (Section
+            10, Framework Methodology Document) requires.
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Formula Reference — traceability</h3>
+          </div>
+          <div class="panel-body" id="formula-body"></div>
+          <div class="foot-note">
+            <span class="tag source">source</span> = Framework Methodology
+            Document, Section 5 &nbsp;&nbsp;
+            <span class="tag addition">addition</span> = added while building
+            the Indicator/Formula Register to close a gap Section 5 left open
+            (see Risk_Taxonomy.xlsx and Indicator_Formula_Register.xlsx, Read Me
+            tabs).
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
